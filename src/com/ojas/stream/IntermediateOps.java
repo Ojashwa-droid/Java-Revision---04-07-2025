@@ -118,6 +118,11 @@ public class IntermediateOps {
                 "This is Ojashwa Tripathi",
                 "I love java"
         );
+
+        List<String> list1 = stringList.stream().flatMap(x -> Arrays.stream(x.split(" "))).map(String::toLowerCase).toList();
+        System.out.println(list1);
+
+
         System.out.println(stringList
                 .stream()
                 .flatMap(x -> Arrays.stream(x.split(" ")))
