@@ -8,13 +8,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class IteratorDemo {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
-        for (int x: list){
+        for (int x : list) {
             System.out.println(x);
         }
 
         /* Internally this happens when we use for each loop */
         Iterator<Integer> iterator = list.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
 
@@ -32,13 +32,12 @@ public class IteratorDemo {
 //        } The issue here is that the reference gets updated after the loop.
 
         Iterator<Integer> itr = numbers.iterator();
-        while(itr.hasNext()){
+        while (itr.hasNext()) {
             Integer next = itr.next();
-            if (next % 2 == 0){
+            if (next % 2 == 0) {
                 itr.remove(); // The object gets removed while reading/iterating the object; without throwing an exception.
             }
         }
         System.out.println(numbers);
-
     }
 }

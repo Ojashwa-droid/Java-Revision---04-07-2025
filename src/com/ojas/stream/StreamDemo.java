@@ -1,8 +1,11 @@
 package com.ojas.stream;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamDemo {
@@ -11,7 +14,7 @@ public class StreamDemo {
         // process collection of data in functional and declarative manner (lambda expressions)
         // Simplify data processing
         // Embrace functional programming
-        // Enable easy parallelism
+        // Enable easy parallelism`
 
         //// How to use Streams ?
         // Source, intermediate operations & terminal operation
@@ -40,12 +43,17 @@ public class StreamDemo {
         String[] names = {"a", "b", "c"};
         Stream<String> stream1 = Arrays.stream(names);
 
+
+        int[] integerArray = {1, 2, 3, 4, 5, 6};
+        IntStream stream3 = Arrays.stream(integerArray);
+
         // 3. Using Stream.of
         Stream<String> stream2 = Stream.of("a", "b", "c", "d");
 
         // 4. Infinite Stream
         Stream.generate(() -> 1).limit(100);
         Stream.iterate(1, x -> x + 1).limit(100);
+
 
     }
 }

@@ -17,9 +17,14 @@ public class Java8Demo {
 //            System.out.println("Hello i am running!");
 //        });
 
+
+
         MathOperation sumOperation = (a, b) -> a + b;
         int operation = sumOperation.operation(1, 2);
         System.out.println(operation);
+
+        MathOperation mathOperation = returnLambdaAsReturnValue();
+        System.out.println(mathOperation.operation(2, 3));
 
 
         // Predicate --> functional interface (Boolean valued function)
@@ -31,6 +36,16 @@ public class Java8Demo {
         System.out.println(isWordStartingWithA.test("America"));
         System.out.println(isWordStartingWithA.and(isWordEndingWithA).test("America"));
 
+//      Example:  Write a Predicate<Integer> that checks if a person is eligible to vote (age ≥ 18).
+        Predicate<Integer> isEligible = x -> x >= 18;
+        System.out.println(isEligible.test(12));
+        System.out.println(isEligible.test(17));
+        System.out.println(isEligible.test(19));
+
+//      Example:  Write a Predicate<String> that returns true if a string contains "@gmail.com".
+        Predicate<String> validEmail = x -> x.endsWith("@gmail.com");
+        System.out.println("Is the email valid? " + validEmail.test("ojashwatiwai@gmail.com"));
+
 
         // Function (functional interface) --> works for you
         Function<Integer, Integer> doubleIt = x -> 2 * x;
@@ -38,6 +53,9 @@ public class Java8Demo {
         System.out.println(doubleIt.andThen(tripleIt).apply(20));
         System.out.println(doubleIt.compose(tripleIt).apply(20));
         System.out.println(doubleIt.apply(100));
+
+        Function<String, Integer> stringLength = x -> x.length();
+        System.out.println("Ojashwa string length is: " + stringLength.apply("Ojashwa"));
 
         Function<Integer, Integer> identity = Function.identity();
         Integer result = identity.apply(12);
@@ -53,10 +71,14 @@ public class Java8Demo {
             }
         };
         printList.accept(list);
+        Consumer<String> toUpperCaseString = x -> System.out.println(x.toUpperCase());
 
         // Supplier --> gives sth without taking anything
         Supplier<String> giveHelloWorld = () -> "Hello world";
         System.out.println(giveHelloWorld.get());
+
+        Supplier<Double> giveRandomNumber = () -> Math.random();
+        System.out.println(giveRandomNumber.get());
 
 
 
@@ -79,9 +101,14 @@ public class Java8Demo {
 
         BiConsumer<Integer, String> biConsumer = (x, y) -> System.out.println(x + " is " + y);
         biConsumer.accept(2, "Two");
+        BiConsumer<String, Integer> multiPleTimesString = (x, y) -> System.out.println(x + " is repeated " + y + " times:" + x.repeat(y));
+        multiPleTimesString.accept("Ojashwa", 3);
+
 
         BiFunction<String, String, Integer> biFunction = (x, y) -> (x + y).length();
         System.out.println(biFunction.apply("a", "bcd"));
+        BiFunction<Integer, Integer, Integer> productOfTwoNumbers = (x, y) -> x * y;
+        System.out.println(productOfTwoNumbers.apply(2, 3));
 
 
         // UnaryOperator, BinaryOperator
@@ -102,9 +129,14 @@ public class Java8Demo {
 
 
     }
+    public static MathOperation returnLambdaAsReturnValue(){ // returning the lambda expression as a return value --> using functional programming properties
+        return (a, b) -> a + b;
+    }
 }
 
-class MobilePhone{
+
+
+class MobilePhone {
     private String name;
 
     public MobilePhone(String name) {
