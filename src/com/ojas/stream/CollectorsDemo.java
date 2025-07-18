@@ -95,7 +95,7 @@ public class CollectorsDemo {
         /*+---------Questions on groupingBy------------+*/
 
         // 📌 Q1: Group names by their first letter, and count how many names start with each letter.
-        System.out.println("\nQuestion 1: " + namesList.stream().collect(Collectors.groupingBy(x -> x.length(), Collectors.counting())));
+        System.out.println("\nQuestion 1: " + namesList.stream().collect(Collectors.groupingBy(x -> x.charAt(0), Collectors.counting())));
 
         // 📌 Q2: Group strings by length, and collect their uppercase forms into a Set.
         Map<Integer, Set<String>> collect = namesList.stream().collect(Collectors.groupingBy(String::length, Collectors.mapping(x -> x.toUpperCase(), Collectors.toSet())));

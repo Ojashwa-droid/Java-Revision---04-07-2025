@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Vector;
 
 public class VectorDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Vector<Integer> vector = new Vector<>(5, 3);
         vector.add(1);
         vector.add(1);

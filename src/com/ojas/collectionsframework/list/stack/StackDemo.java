@@ -2,6 +2,9 @@ package com.ojas.collectionsframework.list.stack;
 
 public class StackDemo {
     public static void main(String[] args) {
+
+        // Thread safe as it extends Vector legacy class.
+
    /*     Stack<Integer> stack = new Stack<>();
         stack.push(11);
         stack.push(2);

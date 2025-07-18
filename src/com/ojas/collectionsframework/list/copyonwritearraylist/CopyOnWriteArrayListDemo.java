@@ -12,7 +12,7 @@ public class CopyOnWriteArrayListDemo {
         // like adding or removing an element
         // instead of directly modifying the existing list
         // a new copy of the existing list is made and the modification is applied to that copy
-        // this allows the other threads reading the list while it's being modified are unchanged
+        // this allows reading operation of the list while it's being modified remain unchanged
 
         // Read Operation: Fast and direct, since they happen on a stable list without interference from modification
         // Write Operation: A new copy of the list is created for every modification
