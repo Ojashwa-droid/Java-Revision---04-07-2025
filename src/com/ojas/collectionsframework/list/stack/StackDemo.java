@@ -5,6 +5,8 @@ public class StackDemo {
 
         // Thread safe as it extends Vector legacy class.
 
+        // Thread safe as it extends Vector legacy class.
+
         // hi
    /*     Stack<Integer> stack = new Stack<>();
         stack.push(11);
