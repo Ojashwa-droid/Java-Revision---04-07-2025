@@ -38,7 +38,7 @@ public class Student implements Comparable<Student> {
 
     // this.compareTo(otherObject)
     @Override
-    public int compareTo(Student o) {
+    public int compareTo(Student o) {   // for natural ordering
 /*        if (o.getGpa() - this.gpa > 0)
             return 1;
         else if (o.getGpa() - this.gpa < 0)

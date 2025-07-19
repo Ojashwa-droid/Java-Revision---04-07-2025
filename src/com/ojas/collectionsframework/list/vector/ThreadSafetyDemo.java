@@ -1,5 +1,6 @@
 package com.ojas.collectionsframework.list.vector;
 
+import java.util.List;
 import java.util.Vector;
 
 public class ThreadSafetyDemo {
@@ -28,7 +29,7 @@ public class ThreadSafetyDemo {
 
 */
 
-        Vector<Integer> vector = new Vector<>();
+        List<Integer> vector = new Vector<>();
         Thread t1 = new Thread(()-> {
             for (int i = 0; i < 1000; i++) {
                 vector.add(i);

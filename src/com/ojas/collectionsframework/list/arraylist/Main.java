@@ -37,6 +37,11 @@ public class Main {
         list.add(10); // 1
         list.add(-178); // 2
         list.add(120); // 3
+        list.forEach(System.out::println);
+        list.replaceAll(x-> x / 2);
+        System.out.println(list);
+        list.removeIf(x -> x < 20);
+        System.out.println(list);
 
 //        list.set(2, -69);
 //        System.out.println(list); // internally implements toString() method
@@ -86,7 +91,7 @@ public class Main {
         /// +-------SORTING IN COLLECTIONS--------+ ///
 
         // Sorting the collections using the static sort() method within the Collection interface
-        /*Collections.sort(fruits);
+       /* Collections.sort(fruits);
         System.out.println(fruits);
 
         Collections.sort(list);
@@ -99,15 +104,17 @@ public class Main {
 //        list.sort(new MyComparator());
 //        System.out.println(list);
 
-        fruits.sort(new MyStringLengthComparator());
+//        fruits.sort(new MyStringLengthComparator());
+        fruits.sort((x,y) -> y.length() - x.length());
         System.out.println(fruits);
 
         // OR WE CAN SIMPLY USE LAMBDA EXPRESSION TO DO THE SAME TASK
 
-        fruits.sort((a, b)-> (b.length() - a.length())); // logic remains the same just done using the lambda expression
+        fruits.sort((a, b)-> (b.length() - a.length())); // logic remains the same just done using the lambda expression -> cause Comparator is a functional interface
         System.out.println(fruits);
 
-
+        Collections.sort(fruits, (x,y) -> y.charAt(0) - x.charAt(0));
+        System.out.println(fruits);
 
 
 
