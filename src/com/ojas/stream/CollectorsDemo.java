@@ -111,6 +111,9 @@ public class CollectorsDemo {
         System.out.println(namesList.stream().collect(Collectors.groupingBy(x -> x.contains("a"), Collectors.mapping(String::toLowerCase, Collectors.toSet()))));
 
 
+        Map<Character, List<String>> collect1 = namesList.stream().collect(Collectors.groupingBy(x -> x.charAt(0)));
+        System.out.println(collect1);
+
         // 9. Partitioning elements
         // Partitioning elements into groups (true and false) based on a predicate
         System.out.println(words.stream().collect(Collectors.partitioningBy(x -> x.length() > 5)));

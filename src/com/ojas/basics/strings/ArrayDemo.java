@@ -36,6 +36,11 @@ public class ArrayDemo {
         ArrayDemo.reverseArray(charArray);
         System.out.println(Arrays.toString(charArray));
 
+//        for (int element: array){
+//            System.out.println(element == 114);
+//        }
+
+
     }
 
     public static void reverseArray(char[] array) {

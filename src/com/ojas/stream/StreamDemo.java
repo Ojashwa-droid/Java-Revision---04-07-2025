@@ -34,6 +34,7 @@ public class StreamDemo {
 */
         System.out.println(numbers.stream().filter(x -> x % 2 == 0).count());
 
+
         // Creating Streams
         // 1. From collections
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
@@ -47,8 +48,13 @@ public class StreamDemo {
         int[] integerArray = {1, 2, 3, 4, 5, 6};
         IntStream stream3 = Arrays.stream(integerArray);
 
+        String naam = "Ojashwa";
+        Stream<String> stream4 = Arrays.stream(naam.split(""));
+
+
         // 3. Using Stream.of
         Stream<String> stream2 = Stream.of("a", "b", "c", "d");
+
 
         // 4. Infinite Stream
         Stream.generate(() -> 1).limit(100);

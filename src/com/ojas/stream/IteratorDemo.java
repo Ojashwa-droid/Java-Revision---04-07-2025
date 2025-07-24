@@ -7,23 +7,23 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class IteratorDemo {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        for (int x : list) {
-            System.out.println(x);
-        }
+//        List<Integer> list = new ArrayList<>();
+//        for (int x : list) {
+//            System.out.println(x);
+//        }
+//
+//        /* Internally this happens when we use for each loop */
+//        Iterator<Integer> iterator = list.iterator();
+//        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
+//        }
 
-        /* Internally this happens when we use for each loop */
-        Iterator<Integer> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
-
-        List<Integer> numbers = new CopyOnWriteArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
 
 //        for (Integer number: numbers){
 //            if (number % 2 == 0){

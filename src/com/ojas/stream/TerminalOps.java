@@ -120,5 +120,17 @@ public class TerminalOps {
 
 
         // Stateless (doesn't know about rest of the element when working on one) and stateful (knows)
+
+
+        // Q: Given a list of names, use Java Streams to filter names starting with "A" (case-insensitive),
+        // convert them to uppercase, sort them in reverse alphabetical order, and collect them into a list.
+        List<String> stringList = namesList.stream()
+                .filter(x -> x.toUpperCase().startsWith("A"))
+                .map(String::toUpperCase)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+        System.out.println(stringList);
+
+
     }
 }
